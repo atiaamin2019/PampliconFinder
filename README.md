@@ -1,7 +1,5 @@
 # AmpliconFinder
-
-
-                            <img width="448" alt="Screenshot 2025-05-13 at 3 48 01 PM" src="https://github.com/user-attachments/assets/ac7d0a52-cfd6-4fe1-b5bf-d5d8732f911f" />
+<img width="448" alt="Screenshot 2025-05-13 at 3 48 01 PM" src="https://github.com/user-attachments/assets/ac7d0a52-cfd6-4fe1-b5bf-d5d8732f911f" />
 
 
 
