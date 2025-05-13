@@ -9,6 +9,7 @@ This repository is for a bioinformatics tool to identify extrachromosomal DNA am
 
 
 ### Targeted Approach for Amplicon Identification:
+![Screenshot 2025-05-13 at 4 06 52 PM](https://github.com/user-attachments/assets/f14991b4-919a-4a96-9f51-3a054edb4902)
 
 **Step1**: The following script takes as input the raw ONT data as fastq.gz files, identifies the reads carrying amplicon junctions, and trim the reads for the probe start site and end site. It generates an output fasta file with the trimmed reads that starts with one probe and end with another probe. 
 
@@ -44,6 +45,7 @@ samtools view -bS file.sam | samtools view -h -F 0x900 - | samtools sort -o sort
 ```
 
 ### Whole genome based approach for amplicon identification
+![Screenshot 2025-05-13 at 4 00 11 PM](https://github.com/user-attachments/assets/1f0ab64c-35e6-4ba7-9bb3-c4bd914d511e)
 
 **Step1**: From the alignment output BAM files calculate the normalized mean coverage using the following script.
 
