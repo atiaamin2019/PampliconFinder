@@ -22,11 +22,13 @@ visualizing genome-wide coverage)
 • Bioinfokit (Used for drawing
 Manhattan plots)
 
+AmpliconFinder pipeline can be run in two ways. One way is a targeted approach where the target gene within the amplicon is known. Two in-silico primer like DNA fragments are required to run this approach.
+And the second approach is for identifying the amplicons throughout the whole genome. This approach requires clustering of the ONT reads and de novo assembly of the amplicons.  
 
 ### Targeted Approach for Amplicon Identification:
 ![Screenshot 2025-05-13 at 4 06 52 PM](https://github.com/user-attachments/assets/f14991b4-919a-4a96-9f51-3a054edb4902)
 
-**Step1**: The following script takes as input the raw ONT data as fastq.gz files, identifies the reads carrying amplicon junctions, and trim the reads for the probe start site and end site. It generates an output fasta file with the trimmed reads that starts with one probe and end with another probe. 
+**Step1**: The following script takes as input the raw ONT data as ONT_reads.fastq.gz files, identifies the reads carrying amplicon junctions, and trim the reads for the probe start site and end site. It generates an output fasta file with the trimmed reads that starts with one probe and end with another probe. 
 
 ```
 python identifying_junction_reads.py
@@ -36,12 +38,12 @@ python identifying_junction_reads.py
 **Step2**: Run SeqKit to get the trimmed read length from the output fasta file of the previous step. 
 
 ```
-seqkit fx2tab --length --name --header-line  foo.fasta
+seqkit fx2tab --length --name --header-line  trimmed_amplicon_reads.fasta > trimmed_read_length.txt
 ```
 
-The resulting output.txt file will have two columns, first one carrying the read ID and the second one has the trimmed read length. A histogram of the read length will show the junction distribution.
+The resulting trimmed_read_length.txt file will have two columns, first one carrying the read ID and the second one has the trimmed read length. A histogram of the read length will show the junction distribution. 
 
-**Step3**: Run the following script which takes as input the raw fastq.gz file and the output.txt file from Seqkit and gives as output the full amplicon reads in a separate fasta file. This output fasta file can be used for amplicon assembly pipeline. 
+**Step3**: Run the following script which takes as input the raw ONT_reads.fastq.gz file and the trimmed_read_length.txt file from Seqkit and gives as output the full amplicon reads in a separate fasta file. This output fasta file can be used for amplicon assembly pipeline. 
 
 ```
 python extracting_amplicon_reads.py
@@ -56,7 +58,7 @@ minimap2 -a reference.fasta extracted_reads.fasta > alignment_output.sam
 **Step5**: Alignment output needs to be modified and filtered using Samtools
 
 ```
-samtools view -bS file.sam | samtools view -h -F 0x900 - | samtools sort -o sorted.bam - && samtools index sorted.bam 
+samtools view -bS alignment_output.sam | samtools view -h -F 0x900 - | samtools sort -o alignment_output_sorted.bam - && samtools index alignment_output_sorted.bam 
 ```
 
 ### Whole genome based approach for amplicon identification
