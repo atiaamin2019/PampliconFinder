@@ -10,17 +10,17 @@ AmpliconFinder is a Python-based bioinformatics pipeline for the automated detec
 Extrachromosomal circular DNA (ecDNA) amplicons have been investigated across diverse organisms. For example, in fungi, different plants, and parasites. In cancer, ecDNAs are recognized as key drivers of oncogene amplification, tumor evolution, and drug resistance, and potential diagnostic biomarkers. Using the long read DNA sequencing such as Oxford Nanopore Technology, these amplicons can be identified within a single read. We built AmpliconFinder to use long reads to identify and characterize the amplicons. This is a Python based bioinformatics pipeline, where several bioinformatics tools are used such as [minimap2](https://github.com/lh3/minimap2), [samtools](https://github.com/samtools), [bedtoos](https://github.com/arq5x/bedtools2), [BLASTn](https://github.com/enormandeau/ncbi_blast_tutorial), [IGV](https://github.com/igvteam/igv), [metaflye](https://github.com/mikolmogorov/Flye), [FeatureCount](https://rnnh.github.io/bioinfo-notebook/docs/featureCounts.html), [CD-hit](https://github.com/weizhongli/cdhit).
 
 **Python Packages Used**
-• BioPython ( Key modules used:
+• [BioPython](https://github.com/biopython/biopython) ( Key modules used:
 SeqIO, SeqRecord, Seq)
-• Seaborn (Used for creating
+• [Seaborn](https://github.com/mwaskom/seaborn) (Used for creating
 statistical plots such as histograms,
 violin plots)
 • Pandas (Used for data analysis)
 • Matplotlib (pyplot was used for
 visualizing genome-wide coverage)
 • Numpy (For data analysis)
-• Pysam (For coverage calculation)
-• Bioinfokit (Used for drawing
+• [Pysam](https://github.com/pysam-developers/pysam) (For coverage calculation)
+• [Bioinfokit](https://github.com/reneshbedre/bioinfokit) (Used for drawing
 Manhattan plots)
 
 AmpliconFinder pipeline can be run in two ways. One way is a targeted approach where the target gene within the amplicon is known. Two in-silico primer like DNA fragments are required to run this approach.
