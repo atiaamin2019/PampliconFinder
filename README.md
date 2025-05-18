@@ -2,8 +2,13 @@
 <img width="448" alt="Screenshot 2025-05-13 at 3 48 01 PM" src="https://github.com/user-attachments/assets/ac7d0a52-cfd6-4fe1-b5bf-d5d8732f911f" />
 
 
+# What is AmpliconFinder
 
-This repository is for a bioinformatics tool to identify extrachromosomal DNA amplicons in long reads.
+AmpliconFinder is a Python-based bioinformatics pipeline for the automated detection of extrachromosomal circular DNA from long read DNA sequencing data. 
+
+Extrachromosomal circular DNA (ecDNA) amplicons have been investigated across diverse organisms. For example, in fungi, different plants, and parasites. In cancer, ecDNAs are recognized as key drivers of oncogene amplification, tumor evolution, and drug resistance, and potential diagnostic biomarkers. Using the long read DNA sequencing such as Oxford Nanopore Technology, these amplicons can be identified within a single read. We built AmpliconFinder to use long reads to identify and characterize the amplicons. This is a Python based bioinformatics pipeline, where several bioinformatics tools are used such as minimap2, samtools, bedtoos, BLASTn, IGV. 
+
+
 
 
 ### Targeted Approach for Amplicon Identification:
