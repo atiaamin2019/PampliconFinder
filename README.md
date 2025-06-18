@@ -1,11 +1,11 @@
 
-<img width="1443" alt="Screenshot 2025-05-18 at 7 56 27 AM" src="https://github.com/user-attachments/assets/6c142b6d-4b50-48af-bcab-207825d9cca4" />
+<img width="786" alt="Screenshot 2025-06-18 at 2 06 46 PM" src="https://github.com/user-attachments/assets/ab4fbcf9-8ce1-4206-b6bd-7e4661f1d1c3" />
 
 
 
-# What is AmpliconFinder
+# What is PampliconFinder
 
-AmpliconFinder is a Python-based bioinformatics pipeline for the automated detection of extrachromosomal circular DNA from long read DNA sequencing data. 
+PampliconFinder is a Python-based bioinformatics pipeline for the automated detection of extrachromosomal circular DNA from long read DNA sequencing data. 
 
 Extrachromosomal circular DNA (ecDNA) amplicons have been investigated across diverse organisms. For example, in fungi, different plants, and parasites. In cancer, ecDNAs are recognized as key drivers of oncogene amplification, tumor evolution, and drug resistance, and potential diagnostic biomarkers. Using the long read DNA sequencing such as Oxford Nanopore Technology, these amplicons can be identified within a single read. We built AmpliconFinder to use long reads to identify and characterize the amplicons. This is a Python based bioinformatics pipeline, where several bioinformatics tools are used such as [minimap2](https://github.com/lh3/minimap2), [samtools](https://github.com/samtools), [bedtoos](https://github.com/arq5x/bedtools2), [BLASTn](https://github.com/enormandeau/ncbi_blast_tutorial), [IGV](https://github.com/igvteam/igv), [metaflye](https://github.com/mikolmogorov/Flye), [FeatureCount](https://rnnh.github.io/bioinfo-notebook/docs/featureCounts.html), [CD-hit](https://github.com/weizhongli/cdhit), [Seqkit](https://github.com/shenwei356/seqkit).
 
